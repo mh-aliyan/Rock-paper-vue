@@ -54,8 +54,8 @@ body {
 
 
 .it{
-    height: 120px;
-    width: 120px;
+    height: 110px;
+    width: 110px;
 }
 
 
@@ -65,22 +65,22 @@ body {
 	background-repeat: no-repeat;
 	background-size: 60%;
 	border-radius: 50%;
-	height: 120px;
-	transform: scale(1.25);
-	width: 120px;
+	height: 110px;
+	transform: scale(1.15);
+	width: 110px;
 }
 
 .it div.r {
-	background-image: url("../src/assets/rock.jpg");
+	background-image: url("./assets/rock.jpg");
 	background-size: 50%;
 }
 
 .it div.p {
-	background-image: url("../src/assets/paper.jpg");
+	background-image: url("./assets/paper.jpg");
 }
 
 .it div.s {
-	background-image: url("../src/assets/scissors.jpg");
+	background-image: url("./assets/scissors.jpg");
 }
 
 .game {
