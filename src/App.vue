@@ -12,13 +12,13 @@
 
 <script>
 import Game from './Game.vue'
-import heada from './heada.vue'
+import Scores from './Scores.vue'
 import foot from './foot.vue'
 
 
 export default {
 
-  components: { Game, heada, foot },
+  components: { Game, Scores, foot },
 
 }
 </script>

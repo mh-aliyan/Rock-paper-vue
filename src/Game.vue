@@ -16,7 +16,7 @@
                     </div>
                 </div>
             </div>
-         </div>
+        </div>
                      <div class="row">
                 <div class="col-md-6 mx-auto">
                     <div class="d-flex flex-row justify-content-between align-items-center">
