@@ -33,9 +33,9 @@
         </div>
       </div>
     </div>
-  <div>
-      {{finalResult}}
-  </div>
+    <div>
+      {{ finalResult }}
+    </div>
   </div>
 </template>
 
@@ -46,27 +46,34 @@ export default {
     return {
       yourScore: 0,
       computerScore: 0,
-      finalResult:"",
+      finalResult: "",
     };
   },
   methods: {
     gameScore(result) {
-      if (result == "won") {
-        this.yourScore++;
-        if(this.yourScore > 2){
-            this.finalResult = "you win"
-        }
-      } else if (result == "lost") {
-        this.computerScore++;
-         if(this.computerScore > 2){
-            this.finalResult = "you Lose"
-        }
+      switch (result) {
+        case "won":
+          this.yourScore++;
+          if (this.yourScore > 2) {
+            this.finalResult = "you win";
+            return;
+          }
+          break;
+        case "lost":
+          this.computerScore++;
+          if (this.computerScore > 2) {
+            this.finalResult = "you Lose";
+            return;
+          }
+          break;
       }
-
+      this.$emit("add-new-game");
     },
+
     reset() {
       this.yourScore = 0;
       this.computerScore = 0;
+      this.finalResult = "";
     },
   },
 };

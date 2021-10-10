@@ -71,7 +71,6 @@ export default {
       gameIsDone: false,
     };
   },
-
   methods: {
     fight() {
       this.fighting = true;

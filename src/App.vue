@@ -1,12 +1,16 @@
 <template>
   <div>
-    <Scores ref="scoress"></Scores>
-    <Game ref="game1" @result="gameresult"> </Game>
-    <Game ref="game2" @result="gameresult"></Game>
-    <Game ref="game3" @result="gameresult"></Game>
-    <Game ref="game4" @result="gameresult"></Game>
-    <Game ref="game5" @result="gameresult"></Game>
+    <Scores ref="scoress" @add-new-game="addNewGame()"></Scores>
     <footaa @reset-clicked="resetEveryThing()"></footaa>
+
+    <Game 
+      v-for="gameId in numberOfGame" 
+      :key="gameId" 
+      ref="allGames"
+      @result="gameresult"
+      >
+    </Game>
+
 
   </div>
 </template>
@@ -17,20 +21,28 @@ import Scores from "./Scores.vue";
 import footaa from "./footaa.vue";
 
 export default {
+  data(){
+    return{
+    numberOfGame : 1,
+    }
+  },
   components: { Game, Scores, footaa },
   methods: {
     resetEveryThing() {
-      this.$refs.game1.reset()
-      this.$refs.game2.reset()
-      this.$refs.game3.reset()
-      this.$refs.game4.reset()
-      this.$refs.game5.reset()
+      for (let i = 0; i < this.numberOfGame; i++){
+        this.$refs.allGames[i].reset() 
+      }
+      this.numberOfGame = 1
       this.$refs.scoress.reset()
     },
     gameresult(result){
       this.$refs.scoress.gameScore(result)
+    },
+    addNewGame(){
+      this.numberOfGame++
     }
 }
 };
 
 </script>
+
