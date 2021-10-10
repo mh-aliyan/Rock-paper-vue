@@ -4,7 +4,6 @@
     <footaa @reset-clicked="resetEveryThing()"></footaa>
 
     <Game 
-      :id="`game${gameId}`" 
       v-for="gameId in numberOfGame" 
       :key="gameId" 
       ref="allGames"
