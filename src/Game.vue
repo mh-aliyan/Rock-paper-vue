@@ -71,7 +71,6 @@ export default {
       gameIsDone: false,
     };
   },
-  props: ['id'],
   methods: {
     fight() {
       this.fighting = true;

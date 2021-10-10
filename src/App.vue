@@ -31,9 +31,9 @@ export default {
   methods: {
     resetEveryThing() {
       for (let i = 0; i < this.numberOfGame; i++){
-        this.$refs.allGames[i].reset()
-        this.numberOfGame = 1 
+        this.$refs.allGames[i].reset() 
       }
+      this.numberOfGame = 1
       this.$refs.scoress.reset()
     },
     gameresult(result){
