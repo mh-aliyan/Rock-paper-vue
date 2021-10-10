@@ -5,7 +5,7 @@
 
     <Game 
       :id="`game${gameId}`" 
-      v-for="gameId in n" 
+      v-for="gameId in numberOfGame" 
       :key="gameId" 
       ref="allGames"
       @result="gameresult"
@@ -24,15 +24,15 @@ import footaa from "./footaa.vue";
 export default {
   data(){
     return{
-    n : 1,
+    numberOfGame : 1,
     }
   },
   components: { Game, Scores, footaa },
   methods: {
     resetEveryThing() {
-      for (let i = 0; i < this.n; i++){
+      for (let i = 0; i < this.numberOfGame; i++){
         this.$refs.allGames[i].reset()
-        this.n = 1 
+        this.numberOfGame = 1 
       }
       this.$refs.scoress.reset()
     },
@@ -40,7 +40,7 @@ export default {
       this.$refs.scoress.gameScore(result)
     },
     addNewGame(){
-      this.n++
+      this.numberOfGame++
     }
 }
 };
