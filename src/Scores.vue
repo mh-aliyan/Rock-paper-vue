@@ -33,8 +33,9 @@
         </div>
       </div>
     </div>
-    <div>
-      {{ finalResult }}
+    
+    <div :class="resultClasses">
+      {{ gameState }}
     </div>
   </div>
 </template>
@@ -46,8 +47,27 @@ export default {
     return {
       yourScore: 0,
       computerScore: 0,
-      finalResult: "",
+      state: 0,
     };
+  },
+  computed:{
+    gameState(){
+      switch(this.state){
+        case 1:
+          return "<<you win>>"
+        case 2:
+          return "<<you lose>>"
+        default :
+          return "" 
+      } 
+    },
+    resultClasses(){
+      return {
+        finalResult : true, 
+        win: this.state == 1,
+        lose: this.state == 2,
+      }
+    }
   },
   methods: {
     gameScore(result) {
@@ -55,14 +75,14 @@ export default {
         case "won":
           this.yourScore++;
           if (this.yourScore > 2) {
-            this.finalResult = "you win";
+            this.state = 1;
             return;
           }
           break;
         case "lost":
           this.computerScore++;
           if (this.computerScore > 2) {
-            this.finalResult = "you Lose";
+            this.state = 2;
             return;
           }
           break;
@@ -73,7 +93,7 @@ export default {
     reset() {
       this.yourScore = 0;
       this.computerScore = 0;
-      this.finalResult = "";
+      this.state = 0;
     },
   },
 };

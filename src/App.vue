@@ -29,11 +29,9 @@ export default {
   components: { Game, Scores, footaa },
   methods: {
     resetEveryThing() {
-      for (let i = 0; i < this.numberOfGame; i++){
-        this.$refs.allGames[i].reset() 
-      }
-      this.numberOfGame = 1
+      this.numberOfGame = [0]
       this.$refs.scoress.reset()
+      this.$refs.allGames[0].reset()
     },
     gameresult(result){
       this.$refs.scoress.gameScore(result)
