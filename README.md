@@ -1,5 +1,7 @@
 # rock-paper-2
 
+    multigame of rock-paper-scissors written in vue-js .
+
 ## Project setup
 ```
 npm install
