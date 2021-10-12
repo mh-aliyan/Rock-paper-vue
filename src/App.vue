@@ -23,7 +23,7 @@ import footaa from "./footaa.vue";
 export default {
   data(){
     return{
-    numberOfGame : 1,
+    numberOfGame :[0],
     }
   },
   components: { Game, Scores, footaa },
@@ -39,7 +39,8 @@ export default {
       this.$refs.scoress.gameScore(result)
     },
     addNewGame(){
-      this.numberOfGame++
+
+      this.numberOfGame.unshift(this.numberOfGame[0] + 1);
     }
 }
 };
