@@ -1,168 +1,221 @@
-
-body {
-	background: #E5E0BE;
-	font-family: 'Slabo 27px', serif;
-    
+.glass,
+.ToolBar {
+  width: 85%;
+  background: linear-gradient(
+    to right top,
+    rgba(224, 151, 209, 0.8),
+    rgba(75, 48, 48, 0.1)
+  );
+  backdrop-filter: blur(0.5rem);
+  border-radius: 30px;
+  z-index: 2;
+  padding: 2% 2% 2% 2%;
+  box-shadow: 4px 4px 3px 2px rgb(41, 39, 39);
+  margin: auto;
+  margin-top: 1%;
 }
 
-.title{
-    font-size: 24px;
-    font-family: 'Permanent Marker', cursive;
+body {
+  background: #f0e0dfd5;
+  font-family: "Slabo 27px", serif;
+}
+
+.title {
+  font-size: 24px;
+  font-family: "Permanent Marker", cursive;
+  margin-left: 10%;
+}
+.chose-border {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.options {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 50%;
 }
 
 .options div {
-	background-color: #918a70;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 60%;
-	border-radius: 50%;
-	cursor: pointer;
-	display: block;
-	height: 120px;
-	margin: 20px 0px;
-	transition: transform 0.2s;
-	transform: scale(1);
-	width: 120px;
+  background-color: #918a70;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 90px;
+  transition: transform 0.2s;
+  transform: scale(1);
+  width: 90px;
 }
 
 .options div:hover {
-	background-color: #D1C79F;
-	background-size: 65%;
+  background-color: #d1c79f;
+  background-size: 60%;
 }
 
 .options div.r {
-	background-image: url("./assets/rock.jpg");
-	background-size: 60%;
+  background-image: url("./assets/rock.jpg");
+  background-size: 65%;
 }
 
 .options div.r:hover {
-	background-size: 65%;
+  background-size: 60%;
 }
 
 .options div.p {
-	background-image: url("./assets/paper.jpg");
+  background-image: url("./assets/paper.jpg");
 }
 
 .options div.s {
-	background-image: url("./assets/scissors.jpg");
+  background-image: url("./assets/scissors.jpg");
+}
+.options div.l {
+  background-image: url("./assets/Lizard.jpg");
+}
+.options div.sp {
+  background-image: url("./assets/Spock.jpg");
 }
 
 .options div.checked {
-    background-color: #BFCCA3;
-	transform: scale(1.2);
+  background-color: #bfcca3;
+  transform: scale(1.2);
 }
-.game-instance{
-	position: relative;
-}
-
-.cover{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 100;
+.game-instance {
+  position: relative;
 }
 
-
-.it{
-    height: 110px;
-    width: 110px;
+.cover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
 }
 
+.it {
+  height: 110px;
+  width: 110px;
+  margin-top: 13px;
+}
 
 .it div {
-	background-color: #C9A185;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 60%;
-	border-radius: 50%;
-	height: 110px;
-	transform: scale(1.15);
-	width: 110px;
+  background-color: #c9a185;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  border-radius: 50%;
+  height: 90px;
+  transform: scale(1.15);
+  width: 90px;
 }
 
 .it div.r {
-	background-image: url("./assets/rock.jpg");
-	background-size: 50%;
+  background-image: url("./assets/rock.jpg");
 }
 
 .it div.p {
-	background-image: url("./assets/paper.jpg");
+  background-image: url("./assets/paper.jpg");
 }
 
 .it div.s {
-	background-image: url("./assets/scissors.jpg");
+  background-image: url("./assets/scissors.jpg");
+}
+.it div.l {
+  background-image: url("./assets/Lizard.jpg");
+}
+.it div.sp {
+  background-image: url("./assets/Spock.jpg");
 }
 
 .game {
-	border-radius: 50%;
-	height: 120px;
-	overflow: hidden;
-	position: relative;
-	width: 120px;
-	z-index: 10;
+  border-radius: 50%;
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+  width: 120px;
+  z-index: 10;
 }
 
-.game .chooseWeapon, .game .fight, .game .fighting, .game .result {
-	align-items: center;
-	background: #a39f8c;
-	color: white;
-	display: flex;
-	height: 100%;
-	justify-content: center;
-	left: 0;
-	position: absolute;
-	text-align: center;
-	top: 0;
-	width: 100%;
-	z-index: 2;
+.game .chooseWeapon,
+.game .fight,
+.game .fighting,
+.game .result {
+  align-items: center;
+  background: #a39f8c;
+  color: white;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }
 
 .game .fight {
-	background: #a48132;
-    cursor: pointer;
+  background: #a48132;
+  cursor: pointer;
 }
 
 .game .result.won {
-	background: #32a836;
+  background: #32a836;
 }
 
 .game .result.lost {
-	background: #f55858;
+  background: #f55858;
 }
 
 .game .result.draw {
-	background: #e6db64;
+  background: #e6db64;
 }
 
-.controls{
-    background-color: #eae5c4;
-    margin: 20px;
+.controls {
+  background-color: #998fcf;
+  width: 30%;
+  margin: auto;
+}
+.total-score {
+  width: 30%;
+  margin-right: 1%;
+  align-items: center;
 }
 
-.controls div{
-    width: 120px;
-    padding: 10px;
+.you .text,
+.computer .text {
+  font-size: 20px;
+  margin-right: 5px;
 }
 
-.you .text, .computer .text{
-    font-size: 20px;
-    margin-right: 5px;
+.you .score,
+.computer .score {
+  font-size: 36px;
+}
+.you {
+  margin-right: 5%;
+}
+.score {
+  font-weight: bold;
 }
 
-.you .score, .computer .score{
-    font-size: 36px;
+.finalResult {
+  font-size: 40px;
+  text-align: center;
+}
+.finalResult.win {
+  color: green;
+}
+.finalResult.lose {
+  color: red;
 }
 
-.finalResult{
-	font-size: 40px;
-	text-align: center;
+.btn {
+  width: 50%;
+  box-shadow: black 1px 1px 1px 1px;
+  margin: 5px 0 5px 0;
+}
 
-}
-.finalResult.win{
-	color: green;
-}
-.finalResult.lose{
-	color: red;
-}
