@@ -1,39 +1,36 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <div class="d-flex flex-row justify-content-between">
-          <div class="title">Rock . Paper . Scissor .</div>
-          <div class="d-flex scores flex-row">
-            <div
-              class="d-flex align-items-center you mr-3 justify-content-between"
+  <div>
+    <div>
+      <div class="d-flex flex-row justify-content-between">
+        <div class="title">Rock . Paper . Scissor .</div>
+
+        <div class="d-flex  flex-row score total-score ">
+          <div class="you">
+            <span class="text">You</span
+            ><span
+              class="score font-weight-bold"
+              :class="
+                yourScore >= computerScore ? 'text-success' : 'text-danger'
+              "
             >
-              <span class="text">You</span
-              ><span
-                class="score font-weight-bold"
-                :class="
-                  yourScore >= computerScore ? 'text-success' : 'text-danger'
-                "
-              >
-                {{ yourScore }}</span
-              >
-            </div>
-            <div class="d-flex align-items-center computer">
-              <span class="text">Computer</span
-              ><span
-                class="score font-weight-bold"
-                :class="
-                  computerScore >= yourScore ? 'text-success' : 'text-danger'
-                "
-              >
-                {{ computerScore }}</span
-              >
-            </div>
+              {{ yourScore }}</span
+            >
+          </div>
+
+          <div class="computer">
+            <span class="text">Computer</span
+            ><span
+              class="score font-weight-bold"
+              :class="
+                computerScore >= yourScore ? 'text-success' : 'text-danger'
+              "
+            >
+              {{ computerScore }}</span
+            >
           </div>
         </div>
       </div>
     </div>
-    
     <div :class="resultClasses">
       {{ gameState }}
     </div>
@@ -50,24 +47,24 @@ export default {
       state: 0,
     };
   },
-  computed:{
-    gameState(){
-      switch(this.state){
+  computed: {
+    gameState() {
+      switch (this.state) {
         case 1:
-          return "<<you win>>"
+          return "<<you win>>";
         case 2:
-          return "<<you lose>>"
-        default :
-          return "" 
-      } 
+          return "<<you lose>>";
+        default:
+          return "";
+      }
     },
-    resultClasses(){
+    resultClasses() {
       return {
-        finalResult : true, 
+        finalResult: true,
         win: this.state == 1,
         lose: this.state == 2,
-      }
-    }
+      };
+    },
   },
   methods: {
     gameScore(result) {

@@ -1,12 +1,10 @@
 <template>
   <div
-    class="d-flex flex-row justify-content-center text-center controls shadow rounded"
-  >
-    <div class="flex-fill">
-      <button @click="$emit('reset-clicked')" class="btn btn-warning">
+    class="d-flex  justify-content-center  controls shadow rounded "
+  > 
+      <button ref="resetButton" @click="$emit('reset-clicked'); $refs.resetButton.blur()" class="btn btn-warning">
         Reset
       </button>
-    </div>
   </div>
 </template>
 
